@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Vishwakarma — Data Analyst</title>
+<meta name="description" content="Data Analyst portfolio — SQL, Python, Power BI, Excel, Machine Learning. IBM Certified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EEF1EC;
+    --paper-raised:#F6F8F5;
+    --ink:#152433;
+    --ink-soft:#4A5A63;
+    --amber:#C98A2B;
+    --sage:#5B7B6F;
+    --rule:#C9CFC9;
+    --rule-strong:#9AA69B;
+    --serif: 'IBM Plex Serif', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, sans-serif;
+    --mono: 'IBM Plex Mono', 'Courier New', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.5;
+    background-image:
+      linear-gradient(var(--rule) 1px, transparent 1px);
+    background-size: 100% 44px;
+    background-attachment:local;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--amber);color:var(--paper);}
+  .wrap{max-width:920px;margin:0 auto;padding:0 28px;}
+
+  /* ---- Header / nav ---- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:rgba(238,241,236,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--rule-strong);
+  }
+  .nav-row{display:flex;justify-content:space-between;align-items:center;padding:16px 28px;max-width:920px;margin:0 auto;}
+  .nav-mark{font-family:var(--mono);font-size:13px;letter-spacing:0.02em;color:var(--ink);text-decoration:none;font-weight:500;}
+  .nav-links{display:flex;gap:24px;list-style:none;font-family:var(--mono);font-size:12.5px;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);border-bottom:1px solid transparent;padding-bottom:2px;}
+  .nav-links a:hover{color:var(--ink);border-bottom-color:var(--amber);}
+  @media(max-width:600px){.nav-links{gap:14px;}}
+
+  /* ---- Hero ---- */
+  .hero{padding:72px 0 40px;}
+  .hero-eyebrow{font-family:var(--mono);font-size:12.5px;color:var(--sage);margin-bottom:14px;}
+  h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,6vw,54px);line-height:1.1;letter-spacing:-0.01em;max-width:11ch;}
+  .role{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--ink-soft);margin-top:12px;max-width:38ch;}
+  .hero-desc{max-width:58ch;margin-top:22px;color:var(--ink-soft);font-size:15.5px;}
+  .hero-cta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{
+    font-family:var(--mono);font-size:12.5px;padding:10px 18px;
+    border:1px solid var(--ink);text-decoration:none;color:var(--ink);
+    transition:background .15s, color .15s;
+  }
+  .btn:hover{background:var(--ink);color:var(--paper-raised);}
+  .btn.primary{background:var(--amber);border-color:var(--amber);color:#fff;}
+  .btn.primary:hover{background:#B37A22;}
+
+  /* ---- Ledger tally (stats) ---- */
+  .tally{
+    margin-top:44px;
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);
+  }
+  .tally-cell{padding:18px 16px;border-right:1px solid var(--rule-strong);}
+  .tally-cell:last-child{border-right:none;}
+  .tally-num{font-family:var(--mono);font-size:clamp(22px,4vw,30px);font-weight:500;color:var(--ink);font-variant-numeric:tabular-nums;}
+  .tally-label{font-size:11.5px;color:var(--ink-soft);margin-top:4px;letter-spacing:0.01em;}
+  @media(max-width:640px){.tally{grid-template-columns:repeat(2,1fr);}.tally-cell:nth-child(2){border-right:none;}}
+
+  /* ---- Section shell ---- */
+  section{padding:56px 0;border-bottom:1px solid var(--rule);}
+  section:last-of-type{border-bottom:none;}
+  .section-head{display:flex;align-items:baseline;gap:14px;margin-bottom:28px;}
+  .section-num{font-family:var(--mono);font-size:12.5px;color:var(--amber);}
+  h2{font-family:var(--serif);font-weight:500;font-size:24px;}
+
+  /* ---- About ---- */
+  .about-text{max-width:64ch;font-size:15.5px;color:var(--ink-soft);}
+  .about-text p+p{margin-top:14px;}
+  .open-to{margin-top:22px;padding:14px 16px;border-left:2px solid var(--amber);background:var(--paper-raised);font-size:14px;}
+  .open-to b{font-family:var(--mono);font-weight:500;}
+
+  /* ---- Skills matrix ---- */
+  .skills-table{width:100%;border-collapse:collapse;font-size:14px;}
+  .skills-table tr{border-bottom:1px solid var(--rule);}
+  .skills-table tr:last-child{border-bottom:none;}
+  .skills-table td{padding:12px 8px;vertical-align:top;}
+  .skill-cat{font-family:var(--mono);font-size:12px;color:var(--sage);white-space:nowrap;padding-right:24px;width:160px;}
+  .skill-items{color:var(--ink-soft);}
+
+  /* ---- Projects (ledger rows) ---- */
+  .proj-group{margin-bottom:6px;}
+  .proj-group-label{font-family:var(--mono);font-size:11.5px;color:var(--sage);margin:20px 0 8px;text-transform:uppercase;letter-spacing:0.04em;}
+  .proj-row{
+    display:flex;justify-content:space-between;align-items:baseline;gap:16px;
+    padding:12px 0;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink);
+  }
+  .proj-row:hover .proj-name{color:var(--amber);}
+  .proj-row:hover{background:var(--paper-raised);margin:0 -12px;padding:12px 12px;border-bottom:1px solid var(--rule);}
+  .proj-name{font-size:15px;font-weight:500;transition:color .15s;}
+  .proj-arrow{font-family:var(--mono);font-size:13px;color:var(--ink-soft);flex-shrink:0;}
+
+  /* ---- Certifications ---- */
+  .cert-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:28px;}
+  .cert-thumb{border:1px solid var(--rule-strong);background:#fff;padding:6px;display:block;text-decoration:none;}
+  .cert-thumb img{width:100%;display:block;}
+  .cert-cap{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin-top:6px;line-height:1.4;}
+  @media(max-width:640px){.cert-strip{grid-template-columns:repeat(2,1fr);}}
+  .cert-table{width:100%;border-collapse:collapse;font-size:13.5px;}
+  .cert-table th{font-family:var(--mono);font-size:11px;text-align:left;color:var(--ink-soft);font-weight:400;padding:8px;border-bottom:1px solid var(--ink);text-transform:uppercase;letter-spacing:0.03em;}
+  .cert-table td{padding:10px 8px;border-bottom:1px solid var(--rule);vertical-align:top;}
+  .cert-table tr:last-child td{border-bottom:none;}
+  .cert-id{font-family:var(--mono);font-size:12px;color:var(--ink-soft);}
+
+  /* ---- Coding profiles ---- */
+  .code-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--rule-strong);border:1px solid var(--rule-strong);}
+  .code-cell{background:var(--paper-raised);padding:20px;text-decoration:none;color:var(--ink);}
+  .code-plat{font-family:var(--mono);font-size:12px;color:var(--sage);}
+  .code-stat{font-family:var(--mono);font-size:20px;margin-top:8px;font-variant-numeric:tabular-nums;}
+  .code-desc{font-size:12.5px;color:var(--ink-soft);margin-top:4px;}
+  @media(max-width:640px){.code-grid{grid-template-columns:1fr;}}
+
+  /* ---- Footer / contact ---- */
+  footer{padding:48px 0 60px;}
+  .contact-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
+  .contact-links{display:flex;gap:20px;flex-wrap:wrap;}
+  .contact-links a{font-family:var(--mono);font-size:13px;text-decoration:none;border-bottom:1px solid var(--rule-strong);padding-bottom:2px;}
+  .contact-links a:hover{border-bottom-color:var(--amber);color:var(--amber);}
+  .footer-note{font-size:12px;color:var(--ink-soft);margin-top:28px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#" class="nav-mark">S. VISHWAKARMA</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero" style="border-bottom:none;">
+    <div class="hero-eyebrow">DATA ANALYST — SQL · PYTHON · POWER BI · EXCEL</div>
+    <h1>Shubham Vishwakarma</h1>
+    <p class="role">Turning raw data into decisions worth acting on.</p>
+    <p class="hero-desc">B.Tech in Information Technology (2026) and IBM Certified Data Analyst with hands-on experience across data analytics, business intelligence, dashboard development, statistics, and machine learning.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn primary">View projects</a>
+      <a href="#contact" class="btn">Get in touch</a>
+    </div>
+
+    <div class="tally">
+      <div class="tally-cell"><div class="tally-num">13+</div><div class="tally-label">Projects shipped</div></div>
+      <div class="tally-cell"><div class="tally-num">174</div><div class="tally-label">SQL problems solved</div></div>
+      <div class="tally-cell"><div class="tally-num">7</div><div class="tally-label">Certifications</div></div>
+      <div class="tally-cell"><div class="tally-num">21</div><div class="tally-label">Public repositories</div></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="section-head"><span class="section-num">01</span><h2>About</h2></div>
+    <div class="about-text">
+      <p>I specialize in transforming raw data into actionable business insights through data analysis, dashboard development, statistical modeling, and predictive analytics.</p>
+      <p>Currently building real-world projects in SQL, Power BI, Python, and Machine Learning, while sharpening problem-solving skills through daily coding and analytics challenges — 174 SQL problems solved on LeetCode, including a Top SQL 50 badge, plus 100-day streaks in both SQL and Excel practice.</p>
+    </div>
+    <div class="open-to">
+      <b>Open to:</b> Data Analyst · Junior Data Analyst · Business Intelligence Analyst · Reporting Analyst · MIS Analyst
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="section-head"><span class="section-num">02</span><h2>Skills &amp; tools</h2></div>
+    <table class="skills-table">
+      <tr><td class="skill-cat">Data Analytics</td><td class="skill-items">Data cleaning · Exploratory data analysis · Statistical analysis · Business intelligence · KPI reporting &amp; insights</td></tr>
+      <tr><td class="skill-cat">SQL</td><td class="skill-items">Joins &amp; subqueries · CTEs · Window functions · Stored procedures · Query optimization</td></tr>
+      <tr><td class="skill-cat">Python</td><td class="skill-items">Pandas · NumPy · Matplotlib · Seaborn · Scikit-Learn</td></tr>
+      <tr><td class="skill-cat">Power BI</td><td class="skill-items">DAX · Power Query · Data modeling · Dashboard development</td></tr>
+      <tr><td class="skill-cat">Excel</td><td class="skill-items">Pivot tables · Power Query · Dashboards · Advanced formulas</td></tr>
+      <tr><td class="skill-cat">Machine Learning</td><td class="skill-items">Regression · Classification · Feature engineering · Model evaluation · Predictive analytics</td></tr>
+      <tr><td class="skill-cat">Tools</td><td class="skill-items">Git · GitHub · Jupyter Notebook</td></tr>
+    </table>
+  </section>
+
+  <section id="projects">
+    <div class="section-head"><span class="section-num">03</span><h2>Featured projects</h2></div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">SQL</div>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis---SQL" target="_blank" rel="noopener"><span class="proj-name">Superstore Sales Analysis</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/MovieLens-SQL-CaseStudy" target="_blank" rel="noopener"><span class="proj-name">MovieLens SQL Case Study</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Customer-Orders-Analysis---SQL" target="_blank" rel="noopener"><span class="proj-name">Customer Orders Analysis</span><span class="proj-arrow">↗ view repo</span></a>
+    </div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">Power BI</div>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---PowerBI" target="_blank" rel="noopener"><span class="proj-name">Superstore Sales Analysis Dashboard</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Adventure-Works-Sales-Analysis-Dashboards---PowerBI" target="_blank" rel="noopener"><span class="proj-name">Adventure Works Sales Analysis Dashboard</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Amazon-Global-Superstore-Sales-Dashboard---PowerBI" target="_blank" rel="noopener"><span class="proj-name">Amazon Global Superstore Sales Dashboard</span><span class="proj-arrow">↗ view repo</span></a>
+    </div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">Excel</div>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Coffee-Shop-Sales--Excel" target="_blank" rel="noopener"><span class="proj-name">Coffee Shop Sales Analysis Dashboard</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---Excel" target="_blank" rel="noopener"><span class="proj-name">Superstore Sales Analysis Dashboard (Excel)</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Purchase-Shipping-Products-Analysis-Dashboard---Excel" target="_blank" rel="noopener"><span class="proj-name">Purchase &amp; Shipping Products Analysis Dashboard</span><span class="proj-arrow">↗ view repo</span></a>
+    </div>
+
+    <div class="proj-group">
+      <div class="proj-group-label">Python &amp; Machine Learning</div>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Retail-Customer-Analysis-Python-Case-Study-----Python" target="_blank" rel="noopener"><span class="proj-name">Retail Customer Analysis Case Study</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Credit-Card-Data-Analysis-Python-Case-Study-----Python" target="_blank" rel="noopener"><span class="proj-name">Credit Card Data Analysis Case Study</span><span class="proj-arrow">↗ view repo</span></a>
+      <a class="proj-row" href="https://github.com/shubham-vishwakarma-analytics/Credit-Card-Consumption-Prediction" target="_blank" rel="noopener"><span class="proj-name">Credit Card Consumption Prediction</span><span class="proj-arrow">↗ view repo</span></a>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="section-head"><span class="section-num">04</span><h2>Certifications</h2></div>
+
+    <div class="cert-strip">
+      <a class="cert-thumb" href="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png" target="_blank" rel="noopener">
+        <img src="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png" alt="Certified Data Analyst, Excel SQL Power BI">
+        <div class="cert-cap">Data Analyst<br>(Excel, SQL &amp; Power BI)</div>
+      </a>
+      <a class="cert-thumb" href="assets/certificates/analytixlabs-data-analyst-python.png" target="_blank" rel="noopener">
+        <img src="assets/certificates/analytixlabs-data-analyst-python.png" alt="Certified Data Analyst, Python">
+        <div class="cert-cap">Data Analyst<br>(Python)</div>
+      </a>
+      <a class="cert-thumb" href="assets/certificates/analytixlabs-data-scientist-python.png" target="_blank" rel="noopener">
+        <img src="assets/certificates/analytixlabs-data-scientist-python.png" alt="Certified Data Scientist, Python">
+        <div class="cert-cap">Data Scientist<br>(Python)</div>
+      </a>
+      <a class="cert-thumb" href="assets/certificates/iit-guwahati-eict-data-science-ai.png" target="_blank" rel="noopener">
+        <img src="assets/certificates/iit-guwahati-eict-data-science-ai.png" alt="IIT Guwahati Advanced Certification in Data Science and AI">
+        <div class="cert-cap">Adv. Data Science &amp; AI<br>(8-month program)</div>
+      </a>
+    </div>
+
+    <table class="cert-table">
+      <tr><th>Certificate</th><th>Issuer</th><th>Date</th><th>ID</th></tr>
+      <tr><td>IBM Data Analyst Professional Certificate</td><td>IBM (Coursera)</td><td>—</td><td class="cert-id"><a href="https://www.coursera.org/account/accomplishments/professional-cert/OBFJD9DQLZRF" target="_blank" rel="noopener">verify ↗</a></td></tr>
+      <tr><td>IBM Data Science Professional Certificate</td><td>IBM (Coursera)</td><td>—</td><td class="cert-id"><a href="https://www.coursera.org/account/accomplishments/professional-cert/J8BXGA7T30DQ" target="_blank" rel="noopener">verify ↗</a></td></tr>
+      <tr><td>Microsoft SQL Server Professional Certificate</td><td>Microsoft (Coursera)</td><td>—</td><td class="cert-id"><a href="https://www.coursera.org/account/accomplishments/professional-cert/EQRT2MQFORL1" target="_blank" rel="noopener">verify ↗</a></td></tr>
+      <tr><td>Certified Data Analyst (Excel, SQL &amp; Power BI)</td><td>AnalytixLabs</td><td>5 Nov 2025</td><td class="cert-id">ALB-DVA-5112025-4558</td></tr>
+      <tr><td>Certified Data Analyst (Python)</td><td>AnalytixLabs</td><td>14 Feb 2026</td><td class="cert-id">ALB-DSP-14022026-4786</td></tr>
+      <tr><td>Certified Data Scientist (Python)</td><td>AnalytixLabs</td><td>14 Aug 2026</td><td class="cert-id">ALB-MLP-14082026-5207</td></tr>
+      <tr><td>Advanced Certification in Data Science &amp; AI (8 months)</td><td>IIT Guwahati — E&amp;ICT Academy</td><td>Oct 2025 – Jun 2026</td><td class="cert-id">EICT/2526/074-OC/36/416</td></tr>
+      <tr><td>NASSCOM Data Visualization &amp; Analytics</td><td>NASSCOM FutureSkills Prime</td><td>—</td><td class="cert-id"><a href="https://fsp-assessment-certificates.s3.ap-southeast-1.amazonaws.com/%27/s3/buckets/fsp-assessment-certificates%27/Shubham%2BVishwakarma_153347609.pdf.pdf" target="_blank" rel="noopener">verify ↗</a></td></tr>
+    </table>
+  </section>
+
+  <section id="coding">
+    <div class="section-head"><span class="section-num">05</span><h2>Coding profiles</h2></div>
+    <div class="code-grid">
+      <a class="code-cell" href="https://leetcode.com/u/shubham-vishwakarma-analytics" target="_blank" rel="noopener">
+        <div class="code-plat">LeetCode</div>
+        <div class="code-stat">174 solved</div>
+        <div class="code-desc">SQL — Top SQL 50 badge, 100-day &amp; 50-day streaks</div>
+      </a>
+      <a class="code-cell" href="https://www.hackerrank.com/profile/shubhamdata" target="_blank" rel="noopener">
+        <div class="code-plat">HackerRank</div>
+        <div class="code-stat">Python + SQL</div>
+        <div class="code-desc">Verified skill badges</div>
+      </a>
+      <a class="code-cell" href="https://platform.stratascratch.com/user/shubhamvishwakarmaanalytics" target="_blank" rel="noopener">
+        <div class="code-plat">StrataScratch</div>
+        <div class="code-stat">Profile ↗</div>
+        <div class="code-desc">Data science interview practice</div>
+      </a>
+      <a class="code-cell" href="https://www.kaggle.com/datadrivenshubham" target="_blank" rel="noopener">
+        <div class="code-plat">Kaggle</div>
+        <div class="code-stat">Profile ↗</div>
+        <div class="code-desc">Datasets &amp; notebooks</div>
+      </a>
+    </div>
+  </section>
+
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-row">
+      <div>
+        <h2 style="margin-bottom:6px;">Let's talk data.</h2>
+        <p style="color:var(--ink-soft);font-size:14.5px;">Open to Data Analyst, BI, and Reporting roles.</p>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/shubham-vishwakarma-analytics" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/shubham-vishwakarma-analytics" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+    <div class="footer-note">© 2026 Shubham Vishwakarma. Every figure on this page is linked to its verifiable source.</div>
+  </div>
+</footer>
+
+<script>
+  // Single orchestrated moment: count up the tally numbers once on load.
+  document.querySelectorAll('.tally-num').forEach(el=>{
+    const target = parseInt(el.textContent, 10);
+    if(isNaN(target)) return;
+    const suffix = el.textContent.replace(/[0-9]/g,'');
+    let cur = 0;
+    const step = Math.max(1, Math.round(target/30));
+    const tick = () => {
+      cur += step;
+      if(cur >= target){ el.textContent = target + suffix; return; }
+      el.textContent = cur + suffix;
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  });
+</script>
+
+</body>
+</html>
