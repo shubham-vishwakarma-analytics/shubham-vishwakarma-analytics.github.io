@@ -1,134 +1,81 @@
-# 👋 Hi, I'm Shubham Vishwakarma
+# 🌐 Shubham Vishwakarma — Data Analyst Portfolio
 
-🎯 **Data Analyst | SQL | Python | Power BI | Excel | Statistics | Machine Learning | IBM Certified**
+**Live site:** [shubham-vishwakarma-analytics.github.io](https://shubham-vishwakarma-analytics.github.io/)
 
-I am a B.Tech Graduate in Information Technology (2026) and an IBM Certified Data Analyst with hands-on experience in Data Analytics, Business Intelligence, Data Visualization, Statistics, and Machine Learning.
+This repository hosts my personal data analyst portfolio, built as a static site and deployed with GitHub Pages.
 
-I specialize in transforming raw data into actionable business insights through data analysis, dashboard development, statistical modeling, and predictive analytics. Currently building real-world projects in SQL, Power BI, Python, and Machine Learning while sharpening my problem-solving skills through daily coding and analytics challenges.
+---
+
+## 👋 About
+
+I am a B.Tech Graduate in Information Technology (2026) and an IBM Certified Data Analyst with hands-on experience in Data Analytics, Business Intelligence, Data Visualization, Statistics, and Machine Learning. I specialize in transforming raw data into actionable business insights through dashboard development, statistical modeling, and predictive analytics.
 
 📫 **Open to:** Data Analyst · Junior Data Analyst · Business Intelligence Analyst · Reporting Analyst · MIS Analyst
 
 ---
 
-## 🎯 Portfolio Highlights
+## 🧭 What's on the site
 
-- ✔️ 13+ Data Analytics & Machine Learning Projects
-- ✔️ IBM Certified Data Analyst & Data Scientist
-- ✔️ AnalytixLabs Certified Data Analyst (Python) & (Excel, SQL & Power BI)
-- ✔️ AnalytixLabs Certified Data Scientist (Python)
-- ✔️ IIT Guwahati (E&ICT Academy) — 8-Month Advanced Certification in Data Science & AI
-- ✔️ Microsoft SQL Server Professional Certificate
-- ✔️ 174 SQL problems solved on LeetCode — **Top SQL 50** badge
-- ✔️ 100 Days Machine Learning Challenge
-- ✔️ End-to-End Dashboard Development (Power BI, Excel)
-
----
-
-## 🧰 Skills & Tools
-
-### 📊 Data Analytics
-Data Cleaning · Exploratory Data Analysis (EDA) · Data Visualization · Statistical Analysis · Business Intelligence · KPI Reporting & Insights
-
-### 💻 SQL
-Joins & Subqueries · CTEs · Window Functions · Stored Procedures · Query Optimization
-
-### 🐍 Python
-Pandas · NumPy · Matplotlib · Seaborn · Scikit-Learn
-
-### 📈 Power BI
-DAX · Power Query · Data Modeling · Dashboard Development
-
-### 📗 Excel
-Pivot Tables · Power Query · Dashboards · Advanced Formulas
-
-### 🤖 Machine Learning
-Regression · Classification · Feature Engineering · Model Evaluation · Predictive Analytics
-
-### 🛠 Tools & Platforms
-Git · GitHub · Jupyter Notebook
-
----
-
-## 📂 Featured Projects
-
-### 🔹 SQL Projects
-- 📈 **[Superstore Sales Analysis (SQL)](https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis---SQL)**
-- 📊 **[MovieLens SQL Case Study](https://github.com/shubham-vishwakarma-analytics/MovieLens-SQL-CaseStudy)**
-- 📉 **[Customer Orders Analysis (SQL)](https://github.com/shubham-vishwakarma-analytics/Customer-Orders-Analysis---SQL)**
-
-### 🔹 Power BI Projects
-- 📊 **[Superstore Sales Analysis Dashboard](https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---PowerBI)**
-- 📈 **[Adventure Works Sales Analysis Dashboard](https://github.com/shubham-vishwakarma-analytics/Adventure-Works-Sales-Analysis-Dashboards---PowerBI)**
-- 📉 **[Amazon Global Superstore Sales Dashboard](https://github.com/shubham-vishwakarma-analytics/Amazon-Global-Superstore-Sales-Dashboard---PowerBI)**
-
-### 🔹 Excel Projects
-- ☕ **[Coffee Shop Sales Analysis Dashboard](https://github.com/shubham-vishwakarma-analytics/Coffee-Shop-Sales--Excel)**
-- 📊 **[Superstore Sales Analysis Dashboard (Excel)](https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---Excel)**
-- 📦 **[Purchase & Shipping Products Analysis Dashboard](https://github.com/shubham-vishwakarma-analytics/Purchase-Shipping-Products-Analysis-Dashboard---Excel)**
-
-### 🔹 Python Projects
-- 📈 **[Retail Customer Analysis Case Study](https://github.com/shubham-vishwakarma-analytics/Retail-Customer-Analysis-Python-Case-Study-----Python)**
-- 💳 **[Credit Card Data Analysis Case Study](https://github.com/shubham-vishwakarma-analytics/Credit-Card-Data-Analysis-Python-Case-Study-----Python)**
-
-### 🔹 Machine Learning Projects
-- 🤖 **[Credit Card Consumption Prediction](https://github.com/shubham-vishwakarma-analytics/Credit-Card-Consumption-Prediction)**
-
----
-
-## 🚀 Learning & Challenge Repositories
-
-| Journey | Repository |
+| Section | Contents |
 |---|---|
-| 🏆 SQL Practice | **[Daily SQL Challenges](https://github.com/shubham-vishwakarma-analytics/Daily-SQL-Challenges)** |
-| 🤖 Machine Learning | **[ML 100 Days Challenge](https://github.com/shubham-vishwakarma-analytics/ML-100-Days-Challenge)** |
-| 📗 Excel Practice | **[Microsoft Excel 100 Days Challenge](https://github.com/shubham-vishwakarma-analytics/Microsoft-Excel-100-Days-Challenge)** |
+| **Hero** | Verified stats — 13+ projects, 174 SQL problems solved, 8 certifications, 21 public repos |
+| **About** | Background, education, focus areas |
+| **Skills & Tools** | SQL, Python, Power BI, Excel, Machine Learning, Git/GitHub |
+| **Projects** | 13 projects, filterable by category (SQL, Power BI, Excel, Python, ML) |
+| **Certifications** | All 8 certificates with real images — click any to view full-size |
+| **Coding Profiles** | LeetCode, HackerRank, StrataScratch, Kaggle |
+| **Contact** | LinkedIn and GitHub |
 
 ---
 
-## 🏅 Certifications
-
-<table>
-<tr>
-<td width="25%" align="center">
-<a href="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png"><img src="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png" width="180"></a><br>
-<b>Certified Data Analyst</b><br>(Excel, SQL & Power BI)<br>AnalytixLabs · Nov 2025
-</td>
-<td width="25%" align="center">
-<a href="assets/certificates/analytixlabs-data-analyst-python.png"><img src="assets/certificates/analytixlabs-data-analyst-python.png" width="180"></a><br>
-<b>Certified Data Analyst</b><br>(Python)<br>AnalytixLabs · Feb 2026
-</td>
-<td width="25%" align="center">
-<a href="assets/certificates/analytixlabs-data-scientist-python.png"><img src="assets/certificates/analytixlabs-data-scientist-python.png" width="180"></a><br>
-<b>Certified Data Scientist</b><br>(Python)<br>AnalytixLabs · Aug 2026
-</td>
-<td width="25%" align="center">
-<a href="assets/certificates/iit-guwahati-eict-data-science-ai.png"><img src="assets/certificates/iit-guwahati-eict-data-science-ai.png" width="180"></a><br>
-<b>Advanced Certification in<br>Data Science & AI</b> (8 months)<br>IIT Guwahati (E&ICT Academy)
-</td>
-</tr>
-</table>
-
-*Click any certificate to view the full-size image.*
+## 🏅 Certifications (8, all verified)
 
 | Certificate | Issuer | Date | Credential ID |
 |---|---|---|---|
-| [IBM Data Analyst Professional Certificate](https://www.coursera.org/account/accomplishments/professional-cert/OBFJD9DQLZRF) | IBM (Coursera) | — | OBFJD9DQLZRF |
-| [IBM Data Science Professional Certificate](https://www.coursera.org/account/accomplishments/professional-cert/J8BXGA7T30DQ) | IBM (Coursera) | — | J8BXGA7T30DQ |
-| [Microsoft SQL Server Professional Certificate](https://www.coursera.org/account/accomplishments/professional-cert/EQRT2MQFORL1) | Microsoft (Coursera) | — | EQRT2MQFORL1 |
+| IBM Data Analyst Professional Certificate | IBM (Coursera) | 7 Mar 2026 | OBFJD9DQLZRF |
+| IBM Data Science Professional Certificate | IBM (Coursera) | 5 Jun 2026 | J8BXGA7T30DQ |
+| Microsoft SQL Server Professional Certificate | Microsoft (Coursera) | 13 Mar 2026 | EQRT2MQFORL1 |
+| Data Visualization & Analytics (Gold) | NASSCOM FutureSkills Prime | 25 Nov 2025 | FSP/2025/11/10248415 |
 | Certified Data Analyst (Excel, SQL & Power BI) | AnalytixLabs | 5 Nov 2025 | ALB-DVA-5112025-4558 |
 | Certified Data Analyst (Python) | AnalytixLabs | 14 Feb 2026 | ALB-DSP-14022026-4786 |
 | Certified Data Scientist (Python) | AnalytixLabs | 14 Aug 2026 | ALB-MLP-14082026-5207 |
-| Advanced Certification in Data Science & AI (Offline, 8 months) | IIT Guwahati — E&ICT Academy (MeitY, Govt. of India) | Oct 2025 – Jun 2026 | EICT/2526/074-OC/36/416 |
-| [NASSCOM Data Visualization & Analytics](https://fsp-assessment-certificates.s3.ap-southeast-1.amazonaws.com/%27/s3/buckets/fsp-assessment-certificates%27/Shubham%2BVishwakarma_153347609.pdf.pdf) | NASSCOM FutureSkills Prime | — | — |
+| Advanced Certification in Data Science & AI (8-month offline program) | IIT Guwahati — E&ICT Academy (MeitY) | Oct 2025 – Jun 2026 | EICT/2526/074-OC/36/416 |
 
 ---
 
 ## 💻 Coding Profiles
 
-- 🟨 **[LeetCode](https://leetcode.com/u/shubham-vishwakarma-analytics)** — 174 SQL problems solved · Top SQL 50 badge
-- ⭐ **[HackerRank](https://www.hackerrank.com/profile/shubhamdata)** — Python & SQL badges
+- 🟨 **[LeetCode](https://leetcode.com/u/shubham-vishwakarma-analytics)** — 174 SQL problems solved · Top SQL 50 badge · 100-day streak
+- ⭐ **[HackerRank](https://www.hackerrank.com/profile/shubhamdata)** — Python & SQL verified badges
 - 📊 **[StrataScratch](https://platform.stratascratch.com/user/shubhamvishwakarmaanalytics)**
 - 🏆 **[Kaggle](https://www.kaggle.com/datadrivenshubham)**
+
+---
+
+## 📂 Featured Projects
+
+**SQL:** [Superstore Sales Analysis](https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis---SQL) · [MovieLens Case Study](https://github.com/shubham-vishwakarma-analytics/MovieLens-SQL-CaseStudy) · [Customer Orders Analysis](https://github.com/shubham-vishwakarma-analytics/Customer-Orders-Analysis---SQL)
+
+**Power BI:** [Superstore Dashboard](https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---PowerBI) · [Adventure Works Dashboard](https://github.com/shubham-vishwakarma-analytics/Adventure-Works-Sales-Analysis-Dashboards---PowerBI) · [Amazon Global Superstore Dashboard](https://github.com/shubham-vishwakarma-analytics/Amazon-Global-Superstore-Sales-Dashboard---PowerBI)
+
+**Excel:** [Coffee Shop Sales Dashboard](https://github.com/shubham-vishwakarma-analytics/Coffee-Shop-Sales--Excel) · [Superstore Dashboard (Excel)](https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---Excel) · [Purchase & Shipping Dashboard](https://github.com/shubham-vishwakarma-analytics/Purchase-Shipping-Products-Analysis-Dashboard---Excel)
+
+**Python:** [Retail Customer Analysis](https://github.com/shubham-vishwakarma-analytics/Retail-Customer-Analysis-Python-Case-Study-----Python) · [Credit Card Data Analysis](https://github.com/shubham-vishwakarma-analytics/Credit-Card-Data-Analysis-Python-Case-Study-----Python)
+
+**Machine Learning:** [Credit Card Consumption Prediction](https://github.com/shubham-vishwakarma-analytics/Credit-Card-Consumption-Prediction)
+
+---
+
+## 🛠 Built With
+
+Plain HTML, CSS, and vanilla JavaScript — no framework, no build step. Deployed via [GitHub Pages](https://pages.github.com/).
+
+```
+portfolio_v3/
+├── index.html
+└── assets/
+    └── certificates/     ← 8 verified certificate images
+```
 
 ---
 
