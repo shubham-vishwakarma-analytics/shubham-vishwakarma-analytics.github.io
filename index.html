@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Vishwakarma — Data Analyst</title>
+<meta name="description" content="Data Analyst portfolio — SQL, Python, Power BI, Excel, Machine Learning. IBM Certified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0D0F12;
+    --panel:#15181D;
+    --panel-2:#1B1F26;
+    --border:#282D35;
+    --text:#F3F4F2;
+    --text-soft:#9AA1AB;
+    --gold:#E3A008;
+    --gold-soft:rgba(227,160,8,0.12);
+    --teal:#2E9E86;
+    --display:'Sora', sans-serif;
+    --sans:'Inter', -apple-system, sans-serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.6;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  ::selection{background:var(--gold);color:#0D0F12;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+  .icon{width:20px;height:20px;flex-shrink:0;vertical-align:middle;}
+  .icon-sm{width:15px;height:15px;}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:30;background:rgba(13,15,18,0.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+  .nav-row{display:flex;justify-content:space-between;align-items:center;padding:20px 28px;max-width:1080px;margin:0 auto;}
+  .nav-mark{font-family:var(--display);font-weight:700;font-size:17px;}
+  .nav-mark .dot{color:var(--gold);}
+  .nav-links{display:flex;gap:30px;list-style:none;font-size:14px;font-weight:500;}
+  .nav-links a{color:var(--text-soft);}
+  .nav-links a:hover{color:var(--text);}
+  @media(max-width:680px){.nav-links{display:none;}}
+
+  /* hero */
+  .hero{padding:90px 0 60px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:12.5px;color:var(--gold);background:var(--gold-soft);border:1px solid rgba(227,160,8,0.3);padding:7px 14px;border-radius:100px;}
+  h1{font-family:var(--display);font-weight:800;font-size:clamp(38px,6.5vw,60px);line-height:1.08;letter-spacing:-0.02em;margin-top:22px;}
+  h1 span{color:var(--gold);}
+  .role{font-size:18px;color:var(--text-soft);margin-top:16px;max-width:52ch;}
+  .hero-cta{margin-top:30px;display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:14px;padding:13px 22px;border:1.5px solid var(--border);border-radius:8px;color:var(--text);transition:all .15s;}
+  .btn:hover{border-color:var(--text-soft);background:var(--panel-2);}
+  .btn.primary{background:var(--gold);border-color:var(--gold);color:#171307;}
+  .btn.primary:hover{background:#C68F07;border-color:#C68F07;}
+
+  .stat-grid{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .stat-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px 18px;}
+  .stat-icon{width:26px;height:26px;color:var(--gold);margin-bottom:14px;}
+  .stat-num{font-family:var(--display);font-weight:700;font-size:28px;}
+  .stat-label{font-size:12.5px;color:var(--text-soft);margin-top:4px;}
+  @media(max-width:680px){.stat-grid{grid-template-columns:1fr 1fr;}}
+
+  section{padding:68px 0;border-top:1px solid var(--border);}
+  .sec-head{display:flex;align-items:center;gap:12px;margin-bottom:32px;}
+  .sec-num{font-family:var(--mono);font-size:13px;color:var(--gold);background:var(--gold-soft);border-radius:6px;padding:4px 9px;}
+  h2{font-family:var(--display);font-weight:700;font-size:27px;}
+  .sec-sub{color:var(--text-soft);font-size:14.5px;margin:-20px 0 26px;max-width:56ch;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;}
+  .about-text p{color:var(--text-soft);font-size:15.5px;max-width:58ch;}
+  .about-text p+p{margin-top:14px;}
+  .facts{display:flex;flex-direction:column;gap:10px;}
+  .fact{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:14px 16px;display:flex;justify-content:space-between;gap:12px;font-size:13.5px;}
+  .fact-k{color:var(--text-soft);font-family:var(--mono);font-size:11px;text-transform:uppercase;}
+  .fact-v{font-weight:600;text-align:right;}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
+
+  /* skills */
+  .skill-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+  .skill-card{background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:22px;}
+  .skill-head{display:flex;align-items:center;gap:12px;margin-bottom:16px;}
+  .skill-head img,.skill-head svg{width:28px;height:28px;}
+  .skill-title{font-family:var(--display);font-weight:600;font-size:15.5px;}
+  .skill-tags{display:flex;flex-wrap:wrap;gap:7px;}
+  .tag{font-size:12.5px;padding:6px 11px;background:var(--panel-2);border:1px solid var(--border);border-radius:100px;color:var(--text-soft);}
+  @media(max-width:760px){.skill-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.skill-grid{grid-template-columns:1fr;}}
+
+  /* projects */
+  .filters{display:flex;gap:10px;margin-bottom:26px;flex-wrap:wrap;}
+  .filter-btn{font-family:var(--sans);font-weight:600;font-size:13px;padding:9px 16px;border:1.5px solid var(--border);background:transparent;color:var(--text-soft);cursor:pointer;border-radius:100px;}
+  .filter-btn.active{background:var(--gold);border-color:var(--gold);color:#171307;}
+  .proj-grid{display:grid;gap:12px;}
+  .proj-item[hidden]{display:none;}
+  .proj-card{display:flex;align-items:center;gap:16px;background:var(--panel);border:1px solid var(--border);border-radius:12px;padding:18px 20px;transition:border-color .15s,background .15s;}
+  .proj-card:hover{border-color:var(--gold);background:var(--panel-2);}
+  .proj-icon{width:42px;height:42px;border-radius:9px;background:var(--panel-2);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .proj-icon img,.proj-icon svg{width:22px;height:22px;}
+  .proj-body{flex:1;min-width:0;}
+  .proj-name{font-family:var(--display);font-weight:600;font-size:15.5px;}
+  .proj-desc{font-size:13px;color:var(--text-soft);margin-top:3px;}
+  .proj-go{width:34px;height:34px;border-radius:100px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--text-soft);transition:all .15s;}
+  .proj-card:hover .proj-go{background:var(--gold);border-color:var(--gold);color:#171307;}
+
+  /* certifications */
+  .cert-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+  .cert-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;}
+  .cert-img-wrap{aspect-ratio:1.3/1;overflow:hidden;background:#fff;}
+  .cert-img-wrap img{width:100%;height:100%;object-fit:cover;object-position:top;}
+  .cert-body{padding:16px;flex:1;display:flex;flex-direction:column;}
+  .cert-name{font-family:var(--display);font-weight:600;font-size:14.5px;}
+  .cert-issuer{font-size:12px;color:var(--text-soft);margin-top:4px;}
+  .cert-id{font-family:var(--mono);font-size:10px;color:var(--text-soft);margin-top:10px;flex:1;}
+  .cert-btn{margin-top:12px;display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;padding:9px;border:1.5px solid var(--border);border-radius:8px;color:var(--text);}
+  .cert-card:hover .cert-btn{background:var(--gold);border-color:var(--gold);color:#171307;}
+  @media(max-width:900px){.cert-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.cert-grid{grid-template-columns:1fr;}}
+
+  /* coding */
+  .code-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+  .code-card{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:14px;transition:border-color .15s;}
+  .code-card:hover{border-color:var(--gold);}
+  .code-top{display:flex;align-items:center;gap:12px;}
+  .code-top img,.code-top svg{width:30px;height:30px;}
+  .code-plat{font-family:var(--display);font-weight:600;font-size:15px;}
+  .code-stat{font-family:var(--mono);font-size:19px;color:var(--gold);}
+  .code-desc{font-size:12px;color:var(--text-soft);}
+  .code-btn{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:6px;font-size:12.5px;font-weight:600;padding:9px;border:1.5px solid var(--border);border-radius:8px;}
+  .code-card:hover .code-btn{background:var(--gold);border-color:var(--gold);color:#171307;}
+  @media(max-width:760px){.code-grid{grid-template-columns:1fr 1fr;}}
+
+  footer{padding:64px 0 70px;border-top:1px solid var(--border);}
+  .foot-inner{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:28px;}
+  .foot-title{font-family:var(--display);font-weight:700;font-size:26px;}
+  .foot-sub{color:var(--text-soft);font-size:14px;margin-top:6px;}
+  .social-row{display:flex;gap:12px;}
+  .social-btn{width:48px;height:48px;border-radius:100px;border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all .15s;}
+  .social-btn img,.social-btn svg{width:22px;height:22px;}
+  .social-btn:hover{background:var(--gold);border-color:var(--gold);}
+  .foot-note{font-size:12px;color:var(--text-soft);margin-top:40px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#" class="nav-mark">shubham<span class="dot">.</span>vishwakarma</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero" style="border-top:none;">
+    <span class="eyebrow">● AVAILABLE FOR DATA ANALYST ROLES</span>
+    <h1>Shubham <span>Vishwakarma</span></h1>
+    <p class="role">Data Analyst turning raw, messy data into dashboards and models people actually act on — SQL, Python, Power BI &amp; Excel, IBM Certified.</p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn primary">View Projects</a>
+      <a href="#contact" class="btn">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16v16H4z" stroke="none"/><path d="M22 6l-10 7L2 6" stroke="currentColor" fill="none"/><path d="M2 6h20v12H2z" stroke="currentColor" fill="none"/></svg>
+        Get in Touch
+      </a>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat-card">
+        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7a2 2 0 0 1 2-2h4l2 3h8a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+        <div class="stat-num">13+</div><div class="stat-label">Projects Shipped</div>
+      </div>
+      <div class="stat-card">
+        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 18l6-6-6-6M8 6l-6 6 6 6"/></svg>
+        <div class="stat-num">174</div><div class="stat-label">SQL Problems Solved</div>
+      </div>
+      <div class="stat-card">
+        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="6"/><path d="M15.5 13.5L17 22l-5-3-5 3 1.5-8.5"/></svg>
+        <div class="stat-num">8</div><div class="stat-label">Certifications</div>
+      </div>
+      <div class="stat-card">
+        <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><line x1="6" y1="3" x2="6" y2="15"/><circle cx="18" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M18 9a9 9 0 0 1-9 9"/></svg>
+        <div class="stat-num">21</div><div class="stat-label">Public Repositories</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head"><span class="sec-num">01</span><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I specialize in transforming raw data into actionable business insights through data analysis, dashboard development, statistical modeling, and predictive analytics.</p>
+        <p>Currently building real-world projects in SQL, Power BI, Python, and Machine Learning, while sharpening my problem-solving skills through daily coding and analytics challenges — including a 100-day streak on SQL and Excel practice.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="fact-k">Education</span><span class="fact-v">B.Tech, IT (2026)</span></div>
+        <div class="fact"><span class="fact-k">Core Cert</span><span class="fact-v">IBM Certified Data Analyst</span></div>
+        <div class="fact"><span class="fact-k">Focus</span><span class="fact-v">BI Dashboards, SQL, ML</span></div>
+        <div class="fact"><span class="fact-k">Open To</span><span class="fact-v">Data / BI / Reporting Analyst</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Skills &amp; Tools</h2></div>
+    <div class="skill-grid">
+      <div class="skill-card">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg>
+          <span class="skill-title">SQL</span>
+        </div>
+        <div class="skill-tags"><span class="tag">Joins &amp; Subqueries</span><span class="tag">CTEs</span><span class="tag">Window Functions</span><span class="tag">Stored Procedures</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          <span class="skill-title">Python</span>
+        </div>
+        <div class="skill-tags"><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Scikit-Learn</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><line x1="6" y1="20" x2="6" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="14"/></svg>
+          <span class="skill-title">Power BI</span>
+        </div>
+        <div class="skill-tags"><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>
+          <span class="skill-title">Excel</span>
+        </div>
+        <div class="skill-tags"><span class="tag">Pivot Tables</span><span class="tag">Advanced Formulas</span><span class="tag">Dashboards</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.9 2.9M16.9 16.9l2.9 2.9M1 12h4M19 12h4M4.2 19.8l2.9-2.9M16.9 7.1l2.9-2.9"/></svg>
+          <span class="skill-title">Machine Learning</span>
+        </div>
+        <div class="skill-tags"><span class="tag">Regression</span><span class="tag">Classification</span><span class="tag">Feature Engineering</span></div>
+      </div>
+      <div class="skill-card">
+        <div class="skill-head">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+          <span class="skill-title">Tools</span>
+        </div>
+        <div class="skill-tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Jupyter Notebook</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Projects</h2></div>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="SQL">SQL</button>
+      <button class="filter-btn" data-filter="PowerBI">Power BI</button>
+      <button class="filter-btn" data-filter="Excel">Excel</button>
+      <button class="filter-btn" data-filter="Python">Python</button>
+      <button class="filter-btn" data-filter="ML">ML</button>
+    </div>
+    <div class="proj-grid" id="projList">
+      <a class="proj-item" data-cat="SQL" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis---SQL" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Superstore Sales Analysis</div><div class="proj-desc">SQL case study — aggregations, joins, and business queries.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="SQL" href="https://github.com/shubham-vishwakarma-analytics/MovieLens-SQL-CaseStudy" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+          <div class="proj-body"><div class="proj-name">MovieLens SQL Case Study</div><div class="proj-desc">Relational analysis using multi-table SQL queries.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="SQL" href="https://github.com/shubham-vishwakarma-analytics/Customer-Orders-Analysis---SQL" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Customer Orders Analysis</div><div class="proj-desc">SQL-driven analysis of customer ordering patterns.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="PowerBI" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---PowerBI" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><line x1="6" y1="20" x2="6" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="14"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Superstore Sales Analysis Dashboard</div><div class="proj-desc">Power BI dashboard with DAX measures — sales, profit, category.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="PowerBI" href="https://github.com/shubham-vishwakarma-analytics/Adventure-Works-Sales-Analysis-Dashboards---PowerBI" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><line x1="6" y1="20" x2="6" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="14"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Adventure Works Sales Analysis Dashboard</div><div class="proj-desc">Multi-page Power BI dashboard on Adventure Works data.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="PowerBI" href="https://github.com/shubham-vishwakarma-analytics/Amazon-Global-Superstore-Sales-Dashboard---PowerBI" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><line x1="6" y1="20" x2="6" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="18" y1="20" x2="18" y2="14"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Amazon Global Superstore Sales Dashboard</div><div class="proj-desc">Global sales dashboard with regional drill-downs.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="Excel" href="https://github.com/shubham-vishwakarma-analytics/Coffee-Shop-Sales--Excel" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Coffee Shop Sales Analysis Dashboard</div><div class="proj-desc">Excel dashboard with pivot tables and interactive charts.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="Excel" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---Excel" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Superstore Sales Analysis Dashboard (Excel)</div><div class="proj-desc">Excel-native version of the Superstore sales dashboard.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="Excel" href="https://github.com/shubham-vishwakarma-analytics/Purchase-Shipping-Products-Analysis-Dashboard---Excel" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Purchase &amp; Shipping Products Analysis Dashboard</div><div class="proj-desc">Excel dashboard tracking purchasing and shipping metrics.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="Python" href="https://github.com/shubham-vishwakarma-analytics/Retail-Customer-Analysis-Python-Case-Study-----Python" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Retail Customer Analysis Case Study</div><div class="proj-desc">Python EDA using Pandas and Matplotlib.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="Python" href="https://github.com/shubham-vishwakarma-analytics/Credit-Card-Data-Analysis-Python-Case-Study-----Python" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Credit Card Data Analysis Case Study</div><div class="proj-desc">Python-based exploratory analysis of transaction data.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+      <a class="proj-item" data-cat="ML" href="https://github.com/shubham-vishwakarma-analytics/Credit-Card-Consumption-Prediction" target="_blank" rel="noopener">
+        <div class="proj-card">
+          <div class="proj-icon"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.2 4.2l2.9 2.9M16.9 16.9l2.9 2.9M1 12h4M19 12h4M4.2 19.8l2.9-2.9M16.9 7.1l2.9-2.9"/></svg></div>
+          <div class="proj-body"><div class="proj-name">Credit Card Consumption Prediction</div><div class="proj-desc">ML model predicting credit card consumption patterns.</div></div>
+          <div class="proj-go">↗</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="sec-head"><span class="sec-num">04</span><h2>Certifications</h2></div>
+    <p class="sec-sub">All 8 verified — click any card to open the full certificate or credential page.</p>
+    <div class="cert-grid">
+
+      <a class="cert-card" href="assets/certificates/ibm-data-analyst.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/ibm-data-analyst.png" alt="IBM Data Analyst Professional Certificate"></div>
+        <div class="cert-body">
+          <div class="cert-name">IBM Data Analyst</div>
+          <div class="cert-issuer">IBM · Coursera · 11 courses</div>
+          <div class="cert-id">7 Mar 2026 · OBFJD9DQLZRF</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/certificates/ibm-data-science.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/ibm-data-science.png" alt="IBM Data Science Professional Certificate"></div>
+        <div class="cert-body">
+          <div class="cert-name">IBM Data Science</div>
+          <div class="cert-issuer">IBM · Coursera · 12 courses</div>
+          <div class="cert-id">5 Jun 2026 · J8BXGA7T30DQ</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/certificates/microsoft-sql-server.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/microsoft-sql-server.png" alt="Microsoft SQL Server Professional Certificate"></div>
+        <div class="cert-body">
+          <div class="cert-name">Microsoft SQL Server</div>
+          <div class="cert-issuer">Microsoft · Coursera · 5 courses</div>
+          <div class="cert-id">13 Mar 2026 · EQRT2MQFORL1</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/certificates/nasscom-dva.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/nasscom-dva.png" alt="NASSCOM Data Visualization and Analytics Certificate"></div>
+        <div class="cert-body">
+          <div class="cert-name">Data Visualization &amp; Analytics</div>
+          <div class="cert-issuer">NASSCOM FutureSkills Prime · Gold</div>
+          <div class="cert-id">25 Nov 2025 · FSP/2025/11/10248415</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png" alt="AnalytixLabs Certified Data Analyst Excel SQL Power BI"></div>
+        <div class="cert-body">
+          <div class="cert-name">Certified Data Analyst</div>
+          <div class="cert-issuer">AnalytixLabs · Excel, SQL &amp; Power BI</div>
+          <div class="cert-id">5 Nov 2025 · ALB-DVA-5112025-4558</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/certificates/analytixlabs-data-analyst-python.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/analytixlabs-data-analyst-python.png" alt="AnalytixLabs Certified Data Analyst Python"></div>
+        <div class="cert-body">
+          <div class="cert-name">Certified Data Analyst</div>
+          <div class="cert-issuer">AnalytixLabs · Python</div>
+          <div class="cert-id">14 Feb 2026 · ALB-DSP-14022026-4786</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/certificates/analytixlabs-data-scientist-python.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/analytixlabs-data-scientist-python.png" alt="AnalytixLabs Certified Data Scientist Python"></div>
+        <div class="cert-body">
+          <div class="cert-name">Certified Data Scientist</div>
+          <div class="cert-issuer">AnalytixLabs · Python</div>
+          <div class="cert-id">14 Aug 2026 · ALB-MLP-14082026-5207</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+      <a class="cert-card" href="assets/certificates/iit-guwahati-eict-data-science-ai.png" target="_blank" rel="noopener">
+        <div class="cert-img-wrap"><img src="assets/certificates/iit-guwahati-eict-data-science-ai.png" alt="IIT Guwahati Advanced Certification in Data Science and AI"></div>
+        <div class="cert-body">
+          <div class="cert-name">Adv. Data Science &amp; AI</div>
+          <div class="cert-issuer">IIT Guwahati · E&amp;ICT Academy · 8 months</div>
+          <div class="cert-id">Oct 2025–Jun 2026 · EICT/2526/074-OC/36/416</div>
+          <div class="cert-btn">↗ View Certificate</div>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="coding">
+    <div class="sec-head"><span class="sec-num">05</span><h2>Coding Profiles</h2></div>
+    <div class="code-grid">
+      <a class="code-card" href="https://leetcode.com/u/shubham-vishwakarma-analytics" target="_blank" rel="noopener">
+        <div class="code-top"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><path d="M8 21h8M12 17v4M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M17 5h3a2 2 0 0 1-2 4h-1M7 5H4a2 2 0 0 0 2 4h1"/></svg><span class="code-plat">LeetCode</span></div>
+        <div class="code-stat">174 solved</div>
+        <div class="code-desc">Top SQL 50 badge · 100-day streak</div>
+        <div class="code-btn">↗ Open Profile</div>
+      </a>
+      <a class="code-card" href="https://www.hackerrank.com/profile/shubhamdata" target="_blank" rel="noopener">
+        <div class="code-top"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><span class="code-plat">HackerRank</span></div>
+        <div class="code-stat">Python + SQL</div>
+        <div class="code-desc">Verified skill badges</div>
+        <div class="code-btn">↗ Open Profile</div>
+      </a>
+      <a class="code-card" href="https://platform.stratascratch.com/user/shubhamvishwakarmaanalytics" target="_blank" rel="noopener">
+        <div class="code-top"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-6"/></svg><span class="code-plat">StrataScratch</span></div>
+        <div class="code-stat">Profile</div>
+        <div class="code-desc">Interview practice</div>
+        <div class="code-btn">↗ Open Profile</div>
+      </a>
+      <a class="code-card" href="https://www.kaggle.com/datadrivenshubham" target="_blank" rel="noopener">
+        <div class="code-top"><svg viewBox="0 0 24 24" fill="none" stroke="#E3A008" stroke-width="1.8"><path d="M3 20l6-10 4 6 3-4 5 8z"/></svg><span class="code-plat">Kaggle</span></div>
+        <div class="code-stat">Profile</div>
+        <div class="code-desc">Datasets &amp; notebooks</div>
+        <div class="code-btn">↗ Open Profile</div>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="foot-inner">
+      <div>
+        <div class="foot-title">Let's talk data.</div>
+        <div class="foot-sub">Open to Data Analyst, BI, and Reporting roles.</div>
+      </div>
+      <div class="social-row">
+        <a class="btn" href="https://www.linkedin.com/in/shubham-vishwakarma-analytics" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 7h3a5 5 0 0 1 0 10h-3M9 17H6a5 5 0 0 1 0-10h3M8 12h8"/></svg>
+          LinkedIn ↗
+        </a>
+        <a class="btn" href="https://github.com/shubham-vishwakarma-analytics" target="_blank" rel="noopener">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M15 7h3a5 5 0 0 1 0 10h-3M9 17H6a5 5 0 0 1 0-10h3M8 12h8"/></svg>
+          GitHub ↗
+        </a>
+      </div>
+    </div>
+    <div class="foot-note">© 2026 Shubham Vishwakarma. Every certificate and figure here links to its verifiable source.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.proj-item').forEach(item=>{
+        item.hidden = (f !== 'All' && item.dataset.cat !== f);
+      });
+    });
+  });
+</script>
+</body>
+</html>
