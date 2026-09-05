@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shubham Vishwakarma — Data Analyst</title>
+<meta name="description" content="Data Analyst portfolio — SQL, Python, Power BI, Excel, Machine Learning. IBM Certified.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F4F6F5;
+    --panel:#FFFFFF;
+    --ink:#16211D;
+    --ink-soft:#5B6961;
+    --teal:#1F7A6C;
+    --teal-deep:#154F46;
+    --coral:#E2725B;
+    --line:#D8DED9;
+    --line-strong:#16211D;
+    --display:'Space Grotesk', sans-serif;
+    --sans:'Inter', -apple-system, sans-serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:
+      radial-gradient(var(--line) 1px, transparent 1px);
+    background-size:22px 22px;
+    background-color:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.55;
+  }
+  a{color:inherit;}
+  ::selection{background:var(--teal);color:#fff;}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 28px;}
+  img{max-width:100%;display:block;}
+
+  /* nav */
+  header{position:sticky;top:0;z-index:30;background:rgba(244,246,245,0.88);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);}
+  .nav-row{display:flex;justify-content:space-between;align-items:center;padding:18px 28px;max-width:1040px;margin:0 auto;}
+  .nav-mark{font-family:var(--display);font-weight:600;font-size:16px;text-decoration:none;letter-spacing:-0.01em;}
+  .nav-mark .dot{color:var(--teal);}
+  .nav-links{display:flex;gap:28px;list-style:none;font-size:13.5px;}
+  .nav-links a{text-decoration:none;color:var(--ink-soft);position:relative;padding-bottom:3px;}
+  .nav-links a::after{content:'';position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--teal);transition:width .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-links a:hover::after{width:100%;}
+  @media(max-width:640px){.nav-links{display:none;}}
+
+  /* hero */
+  .hero{position:relative;padding:88px 0 56px;overflow:hidden;}
+  .hero-block{position:absolute;top:20px;right:-40px;width:340px;height:340px;background:var(--teal);opacity:0.08;transform:rotate(18deg);z-index:0;}
+  .hero-inner{position:relative;z-index:1;}
+  .eyebrow{font-family:var(--mono);font-size:12.5px;color:var(--teal-deep);background:rgba(31,122,108,0.08);display:inline-block;padding:5px 10px;border:1px solid rgba(31,122,108,0.25);opacity:0;animation:rise .5s ease forwards;}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(36px,6.5vw,58px);line-height:1.05;letter-spacing:-0.02em;margin-top:18px;opacity:0;animation:rise .5s ease .08s forwards;}
+  .role{font-size:18px;color:var(--ink-soft);margin-top:14px;max-width:46ch;opacity:0;animation:rise .5s ease .16s forwards;}
+  .hero-cta{margin-top:28px;display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:rise .5s ease .24s forwards;}
+  @keyframes rise{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+  .btn{font-family:var(--sans);font-weight:600;font-size:13.5px;padding:12px 20px;border:1.5px solid var(--ink);text-decoration:none;color:var(--ink);border-radius:2px;transition:background .15s,color .15s,border-color .15s;}
+  .btn:hover{background:var(--ink);color:var(--paper);}
+  .btn.primary{background:var(--teal);border-color:var(--teal);color:#fff;}
+  .btn.primary:hover{background:var(--teal-deep);border-color:var(--teal-deep);}
+
+  .stat-row{margin-top:52px;display:flex;gap:0;border-top:1px solid var(--line-strong);opacity:0;animation:rise .5s ease .32s forwards;}
+  .stat{flex:1;padding:16px 18px 0;border-right:1px solid var(--line);}
+  .stat:last-child{border-right:none;}
+  .stat-num{font-family:var(--display);font-weight:700;font-size:26px;color:var(--teal-deep);}
+  .stat-label{font-size:11.5px;color:var(--ink-soft);margin-top:2px;}
+  @media(max-width:640px){.stat-row{flex-wrap:wrap;}.stat{flex:1 1 50%;border-right:none;border-bottom:1px solid var(--line);padding-bottom:12px;}}
+
+  /* sections */
+  section{padding:64px 0;border-bottom:1px solid var(--line);}
+  section:last-of-type{border-bottom:none;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:30px;}
+  .sec-tag{font-family:var(--mono);font-size:12px;color:var(--coral);}
+  h2{font-family:var(--display);font-weight:600;font-size:26px;letter-spacing:-0.01em;}
+  .sec-sub{color:var(--ink-soft);font-size:14.5px;margin-top:-18px;margin-bottom:26px;max-width:52ch;}
+
+  /* about */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;}
+  .about-text p{color:var(--ink-soft);font-size:15px;max-width:56ch;}
+  .about-text p+p{margin-top:14px;}
+  .facts{border:1px solid var(--line-strong);}
+  .fact{display:flex;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line);font-size:13.5px;}
+  .fact:last-child{border-bottom:none;}
+  .fact-k{color:var(--ink-soft);font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:0.02em;}
+  .fact-v{font-weight:500;text-align:right;}
+  @media(max-width:760px){.about-grid{grid-template-columns:1fr;}}
+
+  /* skills */
+  .skill-row{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line);flex-wrap:wrap;align-items:baseline;}
+  .skill-row:last-child{border-bottom:none;}
+  .skill-cat{font-family:var(--mono);font-size:12px;color:var(--teal-deep);width:150px;flex-shrink:0;}
+  .skill-tags{display:flex;gap:8px;flex-wrap:wrap;}
+  .tag{font-size:13px;padding:5px 11px;border:1px solid var(--line-strong);border-radius:2px;background:var(--panel);}
+
+  /* projects */
+  .filters{display:flex;gap:8px;margin-bottom:26px;flex-wrap:wrap;}
+  .filter-btn{font-family:var(--mono);font-size:12px;padding:7px 14px;border:1px solid var(--line-strong);background:var(--panel);cursor:pointer;border-radius:2px;color:var(--ink-soft);}
+  .filter-btn.active{background:var(--ink);color:var(--paper);border-color:var(--ink);}
+  .proj-list{border-top:1px solid var(--line-strong);}
+  .proj-item{display:flex;gap:16px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--line);text-decoration:none;color:var(--ink);}
+  .proj-item[hidden]{display:none;}
+  .proj-bar{width:4px;align-self:stretch;background:var(--teal);flex-shrink:0;}
+  .proj-item.cat-Excel .proj-bar{background:var(--coral);}
+  .proj-item.cat-ML .proj-bar{background:var(--ink);}
+  .proj-body{flex:1;}
+  .proj-name{font-family:var(--display);font-weight:600;font-size:16.5px;}
+  .proj-desc{font-size:13.5px;color:var(--ink-soft);margin-top:4px;max-width:60ch;}
+  .proj-cat{font-family:var(--mono);font-size:11px;color:var(--ink-soft);white-space:nowrap;padding-top:3px;}
+  .proj-item:hover .proj-name{color:var(--teal-deep);}
+
+  /* certifications carousel */
+  .cert-track{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:18px;-webkit-overflow-scrolling:touch;}
+  .cert-track::-webkit-scrollbar{height:6px;}
+  .cert-track::-webkit-scrollbar-thumb{background:var(--line-strong);}
+  .cert-card{scroll-snap-align:start;flex:0 0 260px;border:1px solid var(--line-strong);background:var(--panel);}
+  .cert-img-link{display:block;border-bottom:1px solid var(--line);}
+  .cert-img-link img{width:100%;}
+  .cert-noimg{height:120px;display:flex;align-items:center;justify-content:center;background:var(--paper);border-bottom:1px solid var(--line);}
+  .cert-noimg span{font-family:var(--mono);font-size:11px;color:var(--ink-soft);}
+  .cert-body{padding:14px 16px;}
+  .cert-name{font-family:var(--display);font-weight:600;font-size:14.5px;}
+  .cert-issuer{font-size:12px;color:var(--ink-soft);margin-top:3px;}
+  .cert-id{font-family:var(--mono);font-size:10.5px;color:var(--ink-soft);margin-top:8px;}
+  .cert-hint{font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);margin-top:10px;}
+
+  /* coding */
+  .code-grid{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line-strong);}
+  .code-cell{padding:20px 16px;text-decoration:none;color:var(--ink);border-right:1px solid var(--line);}
+  .code-cell:last-child{border-right:none;}
+  .code-plat{font-family:var(--mono);font-size:11.5px;color:var(--teal-deep);}
+  .code-stat{font-family:var(--display);font-weight:600;font-size:17px;margin-top:8px;}
+  .code-desc{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  @media(max-width:760px){.code-grid{grid-template-columns:1fr 1fr;}.code-cell{border-bottom:1px solid var(--line);}}
+
+  footer{padding:56px 0 64px;}
+  .contact-row{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px;}
+  .contact-links{display:flex;gap:22px;flex-wrap:wrap;}
+  .contact-links a{font-family:var(--mono);font-size:13px;text-decoration:none;border-bottom:1px solid var(--line-strong);padding-bottom:2px;}
+  .contact-links a:hover{border-bottom-color:var(--teal);color:var(--teal-deep);}
+  .footer-note{font-size:12px;color:var(--ink-soft);margin-top:32px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-row">
+    <a href="#" class="nav-mark">shubham<span class="dot">.</span>vishwakarma</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="wrap">
+  <section class="hero" style="border-bottom:none;">
+    <div class="hero-block"></div>
+    <div class="hero-inner">
+      <span class="eyebrow">DATA ANALYST · SQL · PYTHON · POWER BI</span>
+      <h1>Shubham Vishwakarma</h1>
+      <p class="role">I turn raw, messy data into dashboards and models that people actually act on — built on SQL, Python, Power BI, and Excel.</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn primary">View projects</a>
+        <a href="#contact" class="btn">Get in touch</a>
+      </div>
+      <div class="stat-row">
+        <div class="stat"><div class="stat-num">13+</div><div class="stat-label">Projects shipped</div></div>
+        <div class="stat"><div class="stat-num">174</div><div class="stat-label">SQL problems solved</div></div>
+        <div class="stat"><div class="stat-num">7</div><div class="stat-label">Certifications</div></div>
+        <div class="stat"><div class="stat-num">21</div><div class="stat-label">Public repos</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="sec-head"><span class="sec-tag">// 01</span><h2>About</h2></div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I specialize in transforming raw data into actionable business insights through data analysis, dashboard development, statistical modeling, and predictive analytics.</p>
+        <p>Currently building real-world projects in SQL, Power BI, Python, and Machine Learning, while sharpening my problem-solving skills through daily coding and analytics challenges — including a 100-day streak on SQL and Excel practice.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><span class="fact-k">Education</span><span class="fact-v">B.Tech, Information Technology (2026)</span></div>
+        <div class="fact"><span class="fact-k">Core cert</span><span class="fact-v">IBM Certified Data Analyst</span></div>
+        <div class="fact"><span class="fact-k">Focus</span><span class="fact-v">BI Dashboards, SQL, Predictive Analytics</span></div>
+        <div class="fact"><span class="fact-k">Open to</span><span class="fact-v">Data Analyst · BI Analyst · Reporting Analyst</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="sec-head"><span class="sec-tag">// 02</span><h2>Skills &amp; tools</h2></div>
+    <div class="skill-row">
+      <div class="skill-cat">Analytics</div>
+      <div class="skill-tags"><span class="tag">Data Cleaning</span><span class="tag">EDA</span><span class="tag">Statistical Analysis</span><span class="tag">KPI Reporting</span></div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">SQL</div>
+      <div class="skill-tags"><span class="tag">Joins &amp; Subqueries</span><span class="tag">CTEs</span><span class="tag">Window Functions</span><span class="tag">Stored Procedures</span></div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Python</div>
+      <div class="skill-tags"><span class="tag">Pandas</span><span class="tag">NumPy</span><span class="tag">Matplotlib</span><span class="tag">Seaborn</span><span class="tag">Scikit-Learn</span></div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Power BI</div>
+      <div class="skill-tags"><span class="tag">DAX</span><span class="tag">Power Query</span><span class="tag">Data Modeling</span></div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Excel</div>
+      <div class="skill-tags"><span class="tag">Pivot Tables</span><span class="tag">Advanced Formulas</span><span class="tag">Dashboards</span></div>
+    </div>
+    <div class="skill-row">
+      <div class="skill-cat">Machine Learning</div>
+      <div class="skill-tags"><span class="tag">Regression</span><span class="tag">Classification</span><span class="tag">Feature Engineering</span><span class="tag">Model Evaluation</span></div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="sec-head"><span class="sec-tag">// 03</span><h2>Projects</h2></div>
+    <div class="filters">
+      <button class="filter-btn active" data-filter="All">All</button>
+      <button class="filter-btn" data-filter="SQL">SQL</button>
+      <button class="filter-btn" data-filter="PowerBI">Power BI</button>
+      <button class="filter-btn" data-filter="Excel">Excel</button>
+      <button class="filter-btn" data-filter="Python">Python</button>
+      <button class="filter-btn" data-filter="ML">ML</button>
+    </div>
+    <div class="proj-list" id="projList">
+      <a class="proj-item cat-SQL" data-cat="SQL" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis---SQL" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Superstore Sales Analysis</div><div class="proj-desc">SQL case study on the Superstore dataset covering aggregations, joins, and business queries.</div></div><div class="proj-cat">SQL</div>
+      </a>
+      <a class="proj-item cat-SQL" data-cat="SQL" href="https://github.com/shubham-vishwakarma-analytics/MovieLens-SQL-CaseStudy" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">MovieLens SQL Case Study</div><div class="proj-desc">Relational analysis of the MovieLens dataset using multi-table SQL queries.</div></div><div class="proj-cat">SQL</div>
+      </a>
+      <a class="proj-item cat-SQL" data-cat="SQL" href="https://github.com/shubham-vishwakarma-analytics/Customer-Orders-Analysis---SQL" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Customer Orders Analysis</div><div class="proj-desc">SQL-driven analysis of customer ordering patterns and behavior.</div></div><div class="proj-cat">SQL</div>
+      </a>
+      <a class="proj-item cat-PowerBI" data-cat="PowerBI" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---PowerBI" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Superstore Sales Analysis Dashboard</div><div class="proj-desc">Power BI dashboard tracking sales, profit, and category performance with DAX measures.</div></div><div class="proj-cat">Power BI</div>
+      </a>
+      <a class="proj-item cat-PowerBI" data-cat="PowerBI" href="https://github.com/shubham-vishwakarma-analytics/Adventure-Works-Sales-Analysis-Dashboards---PowerBI" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Adventure Works Sales Analysis Dashboard</div><div class="proj-desc">Multi-page Power BI dashboard built on the Adventure Works dataset.</div></div><div class="proj-cat">Power BI</div>
+      </a>
+      <a class="proj-item cat-PowerBI" data-cat="PowerBI" href="https://github.com/shubham-vishwakarma-analytics/Amazon-Global-Superstore-Sales-Dashboard---PowerBI" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Amazon Global Superstore Sales Dashboard</div><div class="proj-desc">Global sales performance dashboard with regional and category drill-downs.</div></div><div class="proj-cat">Power BI</div>
+      </a>
+      <a class="proj-item cat-Excel" data-cat="Excel" href="https://github.com/shubham-vishwakarma-analytics/Coffee-Shop-Sales--Excel" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Coffee Shop Sales Analysis Dashboard</div><div class="proj-desc">Excel dashboard analyzing coffee shop sales with pivot tables and interactive charts.</div></div><div class="proj-cat">Excel</div>
+      </a>
+      <a class="proj-item cat-Excel" data-cat="Excel" href="https://github.com/shubham-vishwakarma-analytics/Superstore-Sales-Analysis-Dashboard---Excel" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Superstore Sales Analysis Dashboard (Excel)</div><div class="proj-desc">Excel-native version of the Superstore sales dashboard.</div></div><div class="proj-cat">Excel</div>
+      </a>
+      <a class="proj-item cat-Excel" data-cat="Excel" href="https://github.com/shubham-vishwakarma-analytics/Purchase-Shipping-Products-Analysis-Dashboard---Excel" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Purchase &amp; Shipping Products Analysis Dashboard</div><div class="proj-desc">Excel dashboard tracking purchasing and shipping performance metrics.</div></div><div class="proj-cat">Excel</div>
+      </a>
+      <a class="proj-item cat-Python" data-cat="Python" href="https://github.com/shubham-vishwakarma-analytics/Retail-Customer-Analysis-Python-Case-Study-----Python" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Retail Customer Analysis Case Study</div><div class="proj-desc">Python EDA on retail customer data using Pandas and Matplotlib.</div></div><div class="proj-cat">Python</div>
+      </a>
+      <a class="proj-item cat-Python" data-cat="Python" href="https://github.com/shubham-vishwakarma-analytics/Credit-Card-Data-Analysis-Python-Case-Study-----Python" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Credit Card Data Analysis Case Study</div><div class="proj-desc">Python-based exploratory analysis of credit card transaction data.</div></div><div class="proj-cat">Python</div>
+      </a>
+      <a class="proj-item cat-ML" data-cat="ML" href="https://github.com/shubham-vishwakarma-analytics/Credit-Card-Consumption-Prediction" target="_blank" rel="noopener">
+        <div class="proj-bar"></div><div class="proj-body"><div class="proj-name">Credit Card Consumption Prediction</div><div class="proj-desc">Machine learning model predicting credit card consumption patterns.</div></div><div class="proj-cat">ML</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="certifications">
+    <div class="sec-head"><span class="sec-tag">// 04</span><h2>Certifications</h2></div>
+    <p class="sec-sub">Drag or scroll through — each one verified and linked to its source.</p>
+    <div class="cert-track">
+      <div class="cert-card">
+        <a class="cert-img-link" href="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png" target="_blank" rel="noopener"><img src="assets/certificates/analytixlabs-data-analyst-excel-sql-powerbi.png" alt="Certified Data Analyst Excel SQL Power BI"></a>
+        <div class="cert-body">
+          <div class="cert-name">Certified Data Analyst</div>
+          <div class="cert-issuer">AnalytixLabs · Excel, SQL &amp; Power BI</div>
+          <div class="cert-id">5 Nov 2025 · ALB-DVA-5112025-4558</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <a class="cert-img-link" href="assets/certificates/analytixlabs-data-analyst-python.png" target="_blank" rel="noopener"><img src="assets/certificates/analytixlabs-data-analyst-python.png" alt="Certified Data Analyst Python"></a>
+        <div class="cert-body">
+          <div class="cert-name">Certified Data Analyst</div>
+          <div class="cert-issuer">AnalytixLabs · Python</div>
+          <div class="cert-id">14 Feb 2026 · ALB-DSP-14022026-4786</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <a class="cert-img-link" href="assets/certificates/analytixlabs-data-scientist-python.png" target="_blank" rel="noopener"><img src="assets/certificates/analytixlabs-data-scientist-python.png" alt="Certified Data Scientist Python"></a>
+        <div class="cert-body">
+          <div class="cert-name">Certified Data Scientist</div>
+          <div class="cert-issuer">AnalytixLabs · Python</div>
+          <div class="cert-id">14 Aug 2026 · ALB-MLP-14082026-5207</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <a class="cert-img-link" href="assets/certificates/iit-guwahati-eict-data-science-ai.png" target="_blank" rel="noopener"><img src="assets/certificates/iit-guwahati-eict-data-science-ai.png" alt="IIT Guwahati Advanced Certification Data Science AI"></a>
+        <div class="cert-body">
+          <div class="cert-name">Adv. Certification in Data Science &amp; AI</div>
+          <div class="cert-issuer">IIT Guwahati — E&amp;ICT Academy (MeitY) · 8-month offline program</div>
+          <div class="cert-id">Oct 2025 – Jun 2026 · EICT/2526/074-OC/36/416</div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-noimg"><span>IBM · Coursera</span></div>
+        <div class="cert-body">
+          <div class="cert-name">IBM Data Analyst Professional Certificate</div>
+          <div class="cert-issuer">IBM via Coursera</div>
+          <div class="cert-id"><a href="https://www.coursera.org/account/accomplishments/professional-cert/OBFJD9DQLZRF" target="_blank" rel="noopener">verify credential ↗</a></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-noimg"><span>IBM · Coursera</span></div>
+        <div class="cert-body">
+          <div class="cert-name">IBM Data Science Professional Certificate</div>
+          <div class="cert-issuer">IBM via Coursera</div>
+          <div class="cert-id"><a href="https://www.coursera.org/account/accomplishments/professional-cert/J8BXGA7T30DQ" target="_blank" rel="noopener">verify credential ↗</a></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-noimg"><span>Microsoft · Coursera</span></div>
+        <div class="cert-body">
+          <div class="cert-name">Microsoft SQL Server Professional Certificate</div>
+          <div class="cert-issuer">Microsoft via Coursera</div>
+          <div class="cert-id"><a href="https://www.coursera.org/account/accomplishments/professional-cert/EQRT2MQFORL1" target="_blank" rel="noopener">verify credential ↗</a></div>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-noimg"><span>NASSCOM</span></div>
+        <div class="cert-body">
+          <div class="cert-name">Data Visualization &amp; Analytics</div>
+          <div class="cert-issuer">NASSCOM FutureSkills Prime</div>
+          <div class="cert-id"><a href="https://fsp-assessment-certificates.s3.ap-southeast-1.amazonaws.com/%27/s3/buckets/fsp-assessment-certificates%27/Shubham%2BVishwakarma_153347609.pdf.pdf" target="_blank" rel="noopener">verify credential ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="coding">
+    <div class="sec-head"><span class="sec-tag">// 05</span><h2>Coding profiles</h2></div>
+    <div class="code-grid">
+      <a class="code-cell" href="https://leetcode.com/u/shubham-vishwakarma-analytics" target="_blank" rel="noopener">
+        <div class="code-plat">LeetCode</div><div class="code-stat">174 solved</div><div class="code-desc">Top SQL 50 badge</div>
+      </a>
+      <a class="code-cell" href="https://www.hackerrank.com/profile/shubhamdata" target="_blank" rel="noopener">
+        <div class="code-plat">HackerRank</div><div class="code-stat">Python + SQL</div><div class="code-desc">Verified badges</div>
+      </a>
+      <a class="code-cell" href="https://platform.stratascratch.com/user/shubhamvishwakarmaanalytics" target="_blank" rel="noopener">
+        <div class="code-plat">StrataScratch</div><div class="code-stat">Profile ↗</div><div class="code-desc">Interview practice</div>
+      </a>
+      <a class="code-cell" href="https://www.kaggle.com/datadrivenshubham" target="_blank" rel="noopener">
+        <div class="code-plat">Kaggle</div><div class="code-stat">Profile ↗</div><div class="code-desc">Datasets &amp; notebooks</div>
+      </a>
+    </div>
+  </section>
+</div>
+
+<footer id="contact">
+  <div class="wrap">
+    <div class="contact-row">
+      <div>
+        <h2>Let's talk data.</h2>
+        <p style="color:var(--ink-soft);font-size:14.5px;margin-top:6px;">Open to Data Analyst, BI, and Reporting roles.</p>
+      </div>
+      <div class="contact-links">
+        <a href="https://www.linkedin.com/in/shubham-vishwakarma-analytics" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a href="https://github.com/shubham-vishwakarma-analytics" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <div class="footer-note">© 2026 Shubham Vishwakarma. Every certificate and figure here links to its verifiable source.</div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.filter-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      document.querySelectorAll('.proj-item').forEach(item=>{
+        item.hidden = (f !== 'All' && item.dataset.cat !== f);
+      });
+    });
+  });
+</script>
+</body>
+</html>
